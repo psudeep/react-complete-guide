@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
 import './App.css';
 import Person from './Person/Person';
 
@@ -28,33 +30,35 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <nav className="navigation">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/users">Users</a></li>
-            <li><a href="/admin">Admin</a></li>
-          </ul>
-        </nav>
-        <h1>Hi, I am a React App</h1>
-        <p>This is really work</p>
-        <button onClick={() => this.switchNameHandler('Sipu Kumar')}>Switch name</button>
-        <Person 
-          name={this.state.persons[0].name} 
-          age={this.state.persons[0].age} 
-        />
-        <Person 
-          name={this.state.persons[1].name} 
-          age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this, 'Prashant Sudeep')}
-          >
-            is racing
-          </Person>
-        <Person 
-          name={this.state.persons[2].name} 
-          age={this.state.persons[2].age} 
-        />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <nav className="navigation">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/users">Users</a></li>
+              <li><a href="/admin">Admin</a></li>
+            </ul>
+          </nav>
+          <h1>Hi, I am a React App</h1>
+          <p>This is really work</p>
+          <button onClick={() => this.switchNameHandler('Sipu Kumar')}>Switch name</button>
+          <Person 
+            name={this.state.persons[0].name} 
+            age={this.state.persons[0].age} 
+          />
+          <Person 
+            name={this.state.persons[1].name} 
+            age={this.state.persons[1].age}
+            click={this.switchNameHandler.bind(this, 'Prashant Sudeep')}
+            >
+              is racing
+            </Person>
+          <Person 
+            name={this.state.persons[2].name} 
+            age={this.state.persons[2].age} 
+          />
+        </div>
+      </BrowserRouter>
     );
     //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now ??'));
   }
