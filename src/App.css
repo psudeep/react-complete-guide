@@ -2,3 +2,25 @@
   text-align: center;
 }
 
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.navigation li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+}
+
+.navigation a:hover,
+.navigation a:active {
+  color: blue;
+}
