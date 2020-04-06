@@ -14,12 +14,16 @@ class App extends Component {
     isAuthenticated: false,
   };
 
+  switchNameHandler = () => {
+    console.log('was clicked');
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hi, I am a React App</h1>
         <p>This is really work</p>
-        <button>Switch name</button>
+        <button onClick={this.switchNameHandler}>Switch name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>is racing</Person>
         <Person name="Sahiba" age="28" />
