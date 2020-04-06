@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Person from './Person/Person';
 
+import axios from './axios_api';
+
 class App extends Component {
 
   //state is mananged from inside a component which extends Component class
@@ -17,6 +19,19 @@ class App extends Component {
   };
 
   switchNameHandler = (newName) => {
+
+    const postData = {
+      name: this.state.persons[1].name,
+      password: this.state.persons[1].age,
+    };
+
+    axios.post('/post-data', postData).then((res) => {
+      console.log('res', res);
+    })
+      .catch((e) =>{
+        console.log('e', e);
+      });
+
     console.log('was clicked');
     // DOM't DO THIS this.state.persons[0] = 'Prashant Sudeep';
     this.setState({
